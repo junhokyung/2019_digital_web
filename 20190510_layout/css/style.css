@@ -50,7 +50,7 @@ div#visual>div.slider{
 div#content{width: 980px;background-color: pink;margin:0 auto;
 	padding:20px 0; margin-bottom: 50px;}
 div#content>section#section{
-	float:left;width: 700px;height: 500px;height: 1000px;
+	float:left;width: 700px;height: 1000px;
 	background-color: red;}
 div#content>aside#aside{
 	float:right;width: 260px;height: 500px;
