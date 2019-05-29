@@ -2,9 +2,11 @@
 <html lang="ko">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<!-- meta:vp-->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">					
 	<meta charset="UTF-8">
 	<title>mobile</title>
-	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="css/reset.css">
 	<style>
 		
 		/*#main_header*/
@@ -20,11 +22,11 @@
 			background-image: url(img/sprites.png);top: 7px;
 			text-indent: -99999px;
 		}
-		#main_header>a.left{
+		/*#main_header>a.left{
 			width: 62px;
 			left: 5px;
 			background-position: 0 0;
-			}
+			}*/
 		#main_header>label.right{
 			width: 32px;
 			right: 5px;
@@ -69,6 +71,13 @@
 			left: -1px;
 		}
 
+		/*SECTION*/	
+		#section_header{padding: 20px;}
+		#section_article{padding: 20px;}
+
+		/*footer*/
+		#main_footer{padding: 10px;border-top: 1px solid #000;
+			text-align: center;}
 
 	</style>
 	<script>
@@ -86,6 +95,7 @@
 		var num = 2;
 		document.write(num);
 	</script>
+
 	<div id="wrap">
 		<input type="checkbox" id="toggle">
 		<header id="main_header" class="clearfix">
