@@ -10,26 +10,42 @@
 	<title>slider</title>
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<!-- bxslider plug in -->
-	<script src="js/jquery.bxslider.js"></script>
+	<script src="js/jquery.bxslider.js"></script> <!-- //항상상단에 위치 -->
 	<script>
 		// jquery(document).ready();
+		// $(document).ready(function(){
+		// 	var myslider =$(".slider").bxSlider({
+		// 		auto:true,
+		// 		pager:false,
+		// 		controls:false
+		// 	});
 		$(document).ready(function(){
-			var myslider =$(".slider").bxSlider({
+			var = myslider = $('.slider').bxslider({
 				auto:true,
 				pager:false,
 				controls:false
 			});
+		});
+
+		$('.prevBtn').click(function(){
+			myslider.goToPrevSlide();
+			return false; //hash tag 방지
+		});
+		$('.nextBtn').click(function(){
+			myslider.goToNextSlide();
+			return false; //hash tag 방지
+		});
 			// $(".slider1").bxSlider();
 
-			$('.prevBtn').click(function(){
-				myslider.goToPrevSlide();
-				return false;
-			});
-			$('.nextBtn').click(function(){
-				myslider.goToNextSlide();
-				return false;
-			});
-		});
+		// 	$('.prevBtn').click(function(){
+		// 		myslider.goToPrevSlide();
+		// 		return false;
+		// 	});
+		// 	$('.nextBtn').click(function(){
+		// 		myslider.goToNextSlide();
+		// 		return false;
+		// 	});
+		// });
 
 
 		
@@ -46,7 +62,7 @@
    		 box-shadow: none; 
     	 border: 0 none; 
 	     background: #fff; 
-	 	margin-bottom: 0;}
+	     margin-bottom: 0;}
 		/*slider border*/
 	     
 	     /*}pager modify*/
