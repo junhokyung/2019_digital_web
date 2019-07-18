@@ -16,7 +16,7 @@
 		#thumbnail .left{position: absolute;left: 0;top: 30px;width: 33px;height: 95px;cursor:pointer;text-align:center;}
 		#thumbnail .right{position: absolute;right: 0;top: 30px;width: 33px;height: 95px;cursor:pointer;text-align: center;}
 		#thumbnail .container{width: 760px;height: 95px;position: relative;left: 33px;overflow:hidden;}
-		#thumbnail .container ul{position: absolute;width: 2280px;}
+		#thumbnail .container ul{position: absolute;width: 2280px;_left: -1520px;}
 		#thumbnail .container ul li{float: left;width: 120px;height: 95px;margin-left: 8px;}
 		#thumbnail .container .ml0{margin-left: 0;}
 	</style>
@@ -32,6 +32,29 @@
 				// css("display","none")
 				// css({"display":"none","left":40})
 			});
+			// $(".right").on("click",function(){});
+			var current = 0;
+			$(".right").click(function(){
+				if(current <=3) { 
+					current++; 
+					 if(current == 3){current = 0}
+				}
+				//current = current + 1;
+				move();
+			});
+			$(".left").click(function(){
+				if(current >=0){
+					current--;
+					 if(current == -1){current = 2;}
+				} //current=current - 1;
+				move();
+			});
+			function move(){
+				var num = current *760*-1;
+				console.log(current);
+				// $(".container > ul").css("left",num);
+				$(".container > ul").animate({left:num});
+			}
 		});
 	</script>
 </head>
