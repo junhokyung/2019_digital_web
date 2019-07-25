@@ -9,6 +9,7 @@
 	<style>
 		body{font-size:30px;}
 		li{border: 1px solid #000;}
+		.num>div:nth-child(2n){border: 1px solid #000;background-color: skyblue;}
 	</style>
 	<script>
 		$(document).ready(function(){
@@ -30,6 +31,18 @@
 
 			$("#wrapper>ul").append("<li>7</li>");
 			$("#wrapper>ul").prepend("<li>0</li>");
+
+			var current = 0;
+			$(".btn").click(function(){
+				current++;
+				console.log(current);
+				$(".num").append("<div>"+current+"</div>");
+			});
+			$(".dbtn").click(function(){
+				$(".num>div").last().remove();
+				current = 0;
+			});
+
 		});
 	</script>
 </head>
@@ -51,6 +64,7 @@
 		</ul>
 	</div>
 	<button class="btn">증가</button>
+	<button class="dbtn">감소</button>
 	<div class="num"></div>
 
 </body>
