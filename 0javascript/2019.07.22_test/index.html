@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script>
+		// $(document).ready(function(){
+		// 	$(".wrap > ul > li").click(function(){
+		// 		var ho = $(this).index();
+		// 		console.log(ho);
+		// 		$(".wrap > ul > li").removeClass();
+		// 		$(this).addClass("active");
+
+		// 		$(".txt > div").hide();
+		// 		$(".txt > div").eq(ho).show();
+		// 	});
+		// });
+		$(document).ready(function(){
+			$(".wrapper > ul > li").click(function(){
+				var i = $(this).index();
+				console.log(i);
+				var move = i * 500 * -1;
+				$(".text").stop().animate({left:move});
+
+				var ho = $(this).index();
+				console.log(ho);
+				$(".wrapper > ul > li").removeClass();
+				$(this).addClass("active");
+			});
+		});
+	</script>
+	<!-- <style>
+		.wrap{width: 1500px;margin:0 auto;margin-top: 30px;}
+		.wrap>ul{}
+		.wrap>ul>li{float: left;width: 300px;height: 70px;background-color: #cdcdcd;color:blue;text-align: center;line-height: 70px;border-radius: 20px 20px 0 0;cursor:pointer;}
+		.wrap>ul>li:hover{background-color: skyblue;color:#000;}
+		.txt>div{width: 1500px;height: 300px;margin:0 auto;border:1px solid skyblue;}
+		.txt>div{display:none;}
+		.txt>div:nth-child(1){display:block;}
+		.wrap>ul>li.active{background-color: skyblue;color:#000;}
+	</style> -->
+		<style>
+		.wrapper{width: 500px;height: 370px;margin:0 auto;margin-top: 30px;position: relative;overflow:hidden;}
+		.wrapper>ul{}
+		.wrapper>ul>li{float: left;width: 20%;height: 70px;background-color: #cdcdcd;color:blue;text-align: center;line-height: 70px;border-radius: 20px 20px 0 0;cursor:pointer;}
+		.wrapper>ul>li:hover{background-color: skyblue;color:#000;}
+		.text{position: absolute;width:2500px;height: 300px;margin:0 auto;}
+		.text>div{float: left;width: 500px;height: 300px;border:1px solid skyblue;}
+		
+		.wrapper>ul>li.active{background-color: skyblue;color:#000;}
+	</style>
+</head>
+<body>
+<!-- 	<div class="wrap">
+		<ul class="clearfix">
+			<li class="active">Today</li>
+			<li>Story</li>
+			<li>Life</li>
+			<li>Twitter</li>
+			<li>Game</li>
+		</ul>
+	</div>
+		<div class="txt">
+			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis qui sint temporibus et, explicabo quibusdam atque quos facilis. Fuga, labore.</div>
+			<div>Porro veniam quaerat, iusto dicta magni commodi maiores sequi magnam! Rem explicabo nostrum, voluptatibus distinctio perferendis sunt odit quae iste.</div>
+			<div>Sint provident unde cum fuga accusantium illo obcaecati sunt alias vel aperiam, a, dolore esse ut magni aut officia dolorum.</div>
+			<div>Saepe minus laudantium distinctio, excepturi libero optio officia aut veritatis dolore error dolorem ullam est voluptates commodi tempore dolores, exercitationem!</div>
+			<div>Asperiores consequatur iusto eaque quas voluptatem. Blanditiis perspiciatis, distinctio totam nihil voluptatum pariatur autem animi? Nihil voluptatum ducimus perspiciatis, natus?</div>
+		</div>
+ -->
+
+	<div class="wrapper">
+		<ul class="clearfix">
+			<li class="active">Today</li>
+			<li>Story</li>
+			<li>Life</li>
+			<li>Twitter</li>
+			<li>Game</li>
+		</ul>
+	
+		<div class="text clearfix">
+			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis qui sint temporibus et, explicabo quibusdam atque quos facilis. Fuga, labore.</div>
+			<div>Porro veniam quaerat, iusto dicta magni commodi maiores sequi magnam! Rem explicabo nostrum, voluptatibus distinctio perferendis sunt odit quae iste.</div>
+			<div>Sint provident unde cum fuga accusantium illo obcaecati sunt alias vel aperiam, a, dolore esse ut magni aut officia dolorum.</div>
+			<div>Saepe minus laudantium distinctio, excepturi libero optio officia aut veritatis dolore error dolorem ullam est voluptates commodi tempore dolores, exercitationem!</div>
+			<div>Asperiores consequatur iusto eaque quas voluptatem. Blanditiis perspiciatis, distinctio totam nihil voluptatum pariatur autem animi? Nihil voluptatum ducimus perspiciatis, natus?</div>
+		</div>
+	</div>
+</body>
+</html>
