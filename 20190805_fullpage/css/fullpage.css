@@ -116,9 +116,8 @@ html.fp-enabled,
     -webkit-transform: translate3d(0,0,0);
     -ms-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
-    left: 0 !important;
-    right: 0;
-    margin: 0 auto !important;
+    left: 50%;
+    bottom:30px;
 }
 .fp-slidesNav.fp-bottom {
     bottom: 17px;

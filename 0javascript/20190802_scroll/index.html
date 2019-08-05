@@ -43,10 +43,15 @@
 					$("#car2").removeClass("move");
 				}
 
-				if(scrollY >= 300){
-					$("body").css({"background-color":"white"});
+				// if(scrollY > 300){
+				// 	$("body").css({"background-color":"white"});
+				// }else{
+				// 	$("body").css({"background-color":"skyblue"});
+				// }
+				if(scrollY > 300){
+					$("body").removeClass().addClass("red");
 				}else{
-					$("body").css({"background-color":"skyblue"});
+					$("body").removeClass().addClass("white");
 				}
 				
 			});
@@ -58,13 +63,21 @@
 		});
 	</script>
 	<style>
+		body{transition: 0.8s;
+			background-attachment: fixed; /*배경고정*/
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.red{background-color: #f00;background-image: url(../../images/pc02.jpg);}
+		.white{background-image: url(../../images/pc01.jpg);}
 		#wrapper{margin: 20px;border: 1px solid #000;position: relative;}
 		.nav{width: 100%;transition: 0.3s;}
 		.nav ul{}
-		.nav ul>li{float: left;width: 20%;height: 40px;text-align: center;line-height: 40px;background-color:skyblue;cursor:pointer;}
+		.nav ul>li{float: left;width: 20%;text-align: center;line-height: 60px;cursor:pointer;transition: 0.8s;}
 		.nav ul>li:hover{background-color: #000;color:#fff;}
 
-		.nav.fixed{position: fixed;top: 0;left: 0;}
+		.nav.fixed{position: fixed;top: 0;left: 0;background-color: blue;}
+		.nav.fixed li{color:#fff;line-height: 40px;}
 
 		.viewBox{position: fixed;top: 30px;left: 30px;padding: 10px;background-color: pink;}
 
@@ -87,7 +100,7 @@
 		#car2.move{right: 300px;opacity: 1;}
 	</style>
 </head>
-<body>
+<body class="white">
 	<div class="viewBox">
 		스크롤 위치 :<span class="scrollY">0</span><br>	
 		메뉴위치 : <span class="menuPos">0</span><br>		
