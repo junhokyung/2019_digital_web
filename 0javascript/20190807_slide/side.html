@@ -17,12 +17,31 @@
 		.banner>ul>li:nth-child(3){top: 800px;}
 		.banner>ul>li:nth-child(4){top: 1200px;}
 		.banner>ul>li:nth-child(5){top: 1600px;}*/
+
+		.wrap .pager{position: relative;height: 40px;}
+		.wrap .pager span{
+			width: 20px;height: 20px;
+			background-color: #000;display: block;
+			float: left;margin: 5px;
+			border-radius: 10px;cursor:pointer;
+			text-indent: -9999px;
+		}
+		.wrap .pager span.active{background-color: #f00;}
 	</style>
 	<script>
+		// 1. slider 함수작성
+		// 2. left/right 방향 함수 작성
+		//     setInterval작성 
+		// 3. next/prev 버튼적용
+		// 4. mousewheel 이벤트 적용
+		// 5. next 버튼 triggrt작성
+		// 6. pager 제작
 		$(function(){
 			var current = 0;
 			var i;
 			var zI = 1;
+			var pager = $(".wrap .pager span")
+
 			function slider1(){  // left
 				//current++;
 				i = current + 1;
@@ -66,9 +85,17 @@
 				}
 				slideView("prev");
 			});
+
+			pager.click(function(){//pager evevt
+				i = $(this).index();
+				slideView("next")
+			});
 			function slideView(view){
 				var currentEl = $(".banner > ul > li").eq(current); //current
 				var nextEl = $(".banner > ul > li").eq(i); //current+1
+
+				pager.removeClass("active").eq(i).addClass("active")
+
 				if(view == "next"){
 					currentEl.css({left:0}).stop().animate({left:-1000},1100);
 					nextEl.css({left:1000,"z-index":zI++}).stop().animate({left:0},800);
@@ -86,11 +113,11 @@
 					$(".bt_prev").trigger("click");
 				}
 			});
-			//function trigger(){
-				// $선택자.trigger("이벤트명");
-				//$(".bt_next").trigger("click");
-			//}
-			//setInterval(trigger,3000);
+			// function trigger(){
+			// 	// $선택자.trigger("이벤트명");
+			// 	$(".bt_next").trigger("click");
+			// }
+			setInterval(trigger,3000);
 		});
 			
 		
@@ -106,6 +133,13 @@
 				<li><img src="../../images/images04.jpg" alt="img4"></li>
 				<li><img src="../../images/images05.jpg" alt="img5"></li>
 			</ul>
+		</div>
+		<div class="pager">
+			<span class="active">1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<span>5</span>
 		</div>
 		<div class="btn">
 			<span class="bt_prev">이전</span>
