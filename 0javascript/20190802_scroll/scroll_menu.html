@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>scroll_menu</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/jquery.mousewheel.min.js"></script>
+	<style>
+		.wrap{width: 100%;}
+		nav.menu{
+			width: 100%;height: 40px;
+			background-color: #cdcdcd;
+			transition: 0.8s;top: -40px;
+		}
+		nav.menu.fixed{position: fixed;top:0;}
+		nav.menu > ul{width: 1000px;margin: 0 auto;}
+		nav.menu > ul > li{float: left;width: 20%;}
+		nav.menu > ul > li > a{display: block;text-align: center;line-height: 40px;}
+		.content{height: 3000px;}
+		
+	</style>
+	<script>
+		$(document).ready(function(){
+			// $(window).scroll(function(){
+			// var winTop = $(this).scrollTop()
+			// console.log(winTop);
+			// if(winTop > 100){
+			// 	$(".menu").addClass("fixed");
+			// }else{
+			// 	$(".menu").removeClass("fixed");
+			// }
+			// })
+
+		$(document).mousewheel(function(event,delta){
+			console.log(delta);
+			//delta 마우스 휠 up:양수 down:음수
+			$(window).scroll(function(){
+				var winTop = $(this).scrollTop();
+				if(winTop > 100){//scroll start
+					if(delta>0){ //delta start
+						$(".menu").addClass("fixed");
+					}else{
+						$(".menu").removeClass("fixed");
+					}//delta end
+				}else{
+					$(".menu").removeClass("fixed");
+				}//scroll end
+			});
+		});
+
+		});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<nav class="menu fixed">
+			<ul class="clearfix">
+				<li><a href="#">menu1</a></li>
+				<li><a href="#">menu2</a></li>
+				<li><a href="#">menu3</a></li>
+				<li><a href="#">menu4</a></li>
+				<li><a href="#">menu5</a></li>
+			</ul>
+		</nav>
+		<div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero blanditiis architecto totam minima explicabo delectus a ipsa vero accusamus porro eum quo, enim impedit non veritatis dicta quam, reprehenderit suscipit sit error cupiditate distinctio temporibus ullam. Esse beatae autem, perferendis, in consequatur culpa cum inventore excepturi eaque, tenetur suscipit ratione molestias nemo asperiores delectus, unde odit tempora? Doloribus, animi, pariatur? Assumenda qui possimus id porro molestiae a natus ex odio consequuntur minima excepturi nam sapiente, aut blanditiis magnam voluptatem necessitatibus tenetur dolor quam velit, quidem nesciunt quis non vero? Vel quo similique adipisci beatae porro doloremque tenetur culpa nam, numquam veritatis dolore aliquid unde. Corporis earum nam accusamus corrupti animi nobis, voluptatum quae vitae possimus quibusdam blanditiis ab ullam, modi harum magnam numquam ad similique pariatur cumque odit vel nesciunt. Qui nesciunt illum magnam culpa, nihil earum libero distinctio cum facere sequi possimus deleniti corrupti sunt modi nemo cumque aut odio quis placeat. Fugit assumenda ullam, sed perferendis, autem obcaecati nisi sint, minus beatae consequatur nulla. Error reiciendis a cupiditate laudantium explicabo delectus eveniet fugiat harum repudiandae. Recusandae harum obcaecati quisquam, repudiandae, architecto vero voluptatum quia iure hic porro cupiditate officiis assumenda enim quasi atque pariatur vel odio eius expedita fuga asperiores exercitationem quas alias a. Amet quidem consequuntur incidunt blanditiis, asperiores ab, delectus quibusdam dolorum illum. Ex veritatis commodi, distinctio eligendi suscipit. Modi ipsa sit error voluptas ipsum quasi beatae, reiciendis earum sed illum cupiditate, ratione eligendi dignissimos sint sequi in. Nulla, fugiat ad illo dolorum eveniet obcaecati? Distinctio minus dolore, natus corporis quaerat. Non et quos ratione voluptatem ea saepe voluptas quis illo pariatur. Odit voluptatem est eveniet aliquam optio, iure sequi, similique corporis dolorem et, tempora aspernatur. Magni consequatur culpa itaque odio non earum, ipsam voluptatibus, qui ut quibusdam, nulla quisquam? Perspiciatis iure adipisci accusantium placeat quam est, eligendi eveniet deserunt, maxime dolores non. Blanditiis necessitatibus quos esse quisquam animi et cumque voluptatibus nemo sed officiis autem, praesentium accusamus expedita quia, dolorem illum provident nam, unde veritatis sit possimus sapiente laudantium cupiditate alias. Nam neque nemo sunt nesciunt nulla obcaecati autem quos ratione fuga quisquam, mollitia possimus vero hic veniam. Eveniet impedit molestiae architecto deleniti excepturi assumenda natus consequuntur minus, aliquam enim ipsum eius quos, voluptates laudantium, pariatur facere nulla fugit numquam amet vitae expedita. Quam eum, vero provident maiores natus dolores, rem blanditiis sed? Ullam esse impedit numquam veritatis quidem facilis, dolor eos optio earum reprehenderit,  </div>
+	</div>
+</body>
+</html>
